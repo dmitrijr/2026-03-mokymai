@@ -4,22 +4,29 @@
     {
         static void Main(string[] args)
         {
-            var rect1 = new Rectangle
+            Rectangle rect3;
+            rect3 = new Rectangle();
+            rect3.Width = 7;
+
+            Rectangle rect1;
+            rect1 = new Rectangle
             {
                 Width = 10.2,
                 Height = 5.7
             };
 
-            var rect2 = new Rectangle();
-            rect2.Width = 3.8;
-            rect2.Height = 4.5;
+            var rect2 = new Rectangle
+            {
+                Width = 3,
+                Height = 8
+            };
 
-            var rect3 = new Rectangle();
+            for (int i = 0; i < 100; i++)
+            {
+                new Rectangle();
+            }
 
-            PrintRactangle(rect1);
-            PrintRactangle(rect2);
-            PrintRactangle(rect3);
-            Console.WriteLine("Hello world!");
+            Console.WriteLine($"Rectangle count: {Rectangle.Count}");
         }
 
         private static void PrintRactangle(Rectangle rect)
