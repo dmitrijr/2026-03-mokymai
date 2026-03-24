@@ -4,15 +4,33 @@
     {
         static void Main(string[] args)
         {
-            var rect3 = new Rectangle(7, 4);
-            var rect1 = new Rectangle(10.2, 5.7);
-            var rect2 = new Rectangle(3, 8);
+            var rect = new Rectangle(10.2, 5.7);
+            Reset(rect);
 
-            Console.WriteLine($"Rectangle: {rect1.GetArea()}");
-            Console.WriteLine($"Rectangle: {rect2.GetArea()}");
-            Console.WriteLine($"Rectangle: {rect3.GetArea()}");
+            Console.WriteLine($"Width: = {rect.Width}; Height = {rect.Height}");
+        }
 
-            Console.WriteLine($"Rectangle count: {Rectangle.Count}");
+        private static void Reset(Rectangle rectangle)
+        {
+            rectangle.Width = 0;
+            rectangle.Height = 0;
+        }
+
+        private static void ParamByValue()
+        {
+            var i = 3;
+            Console.WriteLine($"i = {i}");
+            Increase(i);
+            Console.WriteLine("=========");
+            Console.WriteLine($"i = {i}");
+        }
+
+        public static int Increase(int number)
+        {
+            number++;
+            Console.WriteLine($"increase: i = {number}");
+
+            return number;
         }
 
         private static void PrintRactangle(Rectangle rect)
