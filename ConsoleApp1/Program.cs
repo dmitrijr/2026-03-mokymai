@@ -4,6 +4,17 @@
     {
         static void Main(string[] args)
         {
+            var rect = new Rectangle(10.2, 5.7);
+            var rect2 = rect;
+
+            rect = null;
+
+            Console.WriteLine($"Width: = {rect.Width}; Height = {rect.Height}");
+            Console.WriteLine($"Width: = {rect2.Width}; Height = {rect2.Height}");
+        }
+
+        private static void RefereceArrayCopy()
+        {
             var sourceArray = new Rectangle[2];
             sourceArray[0] = new Rectangle(2, 3);
             sourceArray[1] = new Rectangle(5, 1);
