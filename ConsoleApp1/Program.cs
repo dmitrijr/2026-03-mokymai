@@ -4,6 +4,31 @@
     {
         static void Main(string[] args)
         {
+            var sourceArray = new Rectangle[2];
+            sourceArray[0] = new Rectangle(2, 3);
+            sourceArray[1] = new Rectangle(5, 1);
+
+            Console.WriteLine("before copy");
+            PrintArray(sourceArray);
+
+            var targetArray = new Rectangle[sourceArray.Length];
+            Array.Copy(sourceArray, targetArray, sourceArray.Length);
+
+            targetArray[1].Width = 7;
+
+            Console.WriteLine("source");
+            PrintArray(sourceArray);
+            Console.WriteLine("target");
+            PrintArray(targetArray);
+        }
+
+        private static void PrintArray(Rectangle[] array)
+        {
+            Console.WriteLine(string.Join(Environment.NewLine, array.Select(o => $"w: {o.Width}; h: {o.Height}")));
+        }
+
+        private static void ParamByReference()
+        {
             var rect = new Rectangle(10.2, 5.7);
             Reset(rect);
 
