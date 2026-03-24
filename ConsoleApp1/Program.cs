@@ -4,27 +4,13 @@
     {
         static void Main(string[] args)
         {
-            Rectangle rect3;
-            rect3 = new Rectangle();
-            rect3.Width = 7;
+            var rect3 = new Rectangle(7, 4);
+            var rect1 = new Rectangle(10.2, 5.7);
+            var rect2 = new Rectangle(3, 8);
 
-            Rectangle rect1;
-            rect1 = new Rectangle
-            {
-                Width = 10.2,
-                Height = 5.7
-            };
-
-            var rect2 = new Rectangle
-            {
-                Width = 3,
-                Height = 8
-            };
-
-            for (int i = 0; i < 100; i++)
-            {
-                new Rectangle();
-            }
+            Console.WriteLine($"Rectangle: {rect1.GetArea()}");
+            Console.WriteLine($"Rectangle: {rect2.GetArea()}");
+            Console.WriteLine($"Rectangle: {rect3.GetArea()}");
 
             Console.WriteLine($"Rectangle count: {Rectangle.Count}");
         }

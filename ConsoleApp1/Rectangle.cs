@@ -7,8 +7,11 @@ namespace HelloWorld
         public double Height { get; set; }
         public double Width { get; set; }
 
-        public Rectangle()
+        public Rectangle(double width, double height)
         {
+            Width = width;
+            Height = height;
+
             Count++;
         }
 
