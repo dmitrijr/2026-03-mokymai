@@ -1,16 +1,20 @@
-﻿namespace HelloWorld
+﻿using System.Security.Principal;
+
+namespace HelloWorld
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            var rect = new Rectangle(10.2, 5.7);
-            var rect2 = rect;
+            var c = new Calculator();
 
-            rect = null;
+            short a = 10;
+            int b = 20;
+            double d = 30.2;
 
-            Console.WriteLine($"Width: = {rect.Width}; Height = {rect.Height}");
-            Console.WriteLine($"Width: = {rect2.Width}; Height = {rect2.Height}");
+            var result = a + b + d;
+
+            Console.WriteLine(c.Add(a, b, d));
         }
 
         private static void RefereceArrayCopy()
