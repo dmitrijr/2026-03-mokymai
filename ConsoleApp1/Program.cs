@@ -6,29 +6,13 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
+            var rect = new Rectangle();
+
             var c = new Calculator();
 
-            short s = 10;
-            ushort us = 20;
-            int i = 65535 + 32767 + 2; // -32,768 to 32,767 // 0 to 65,535
+            c.Add(20, 32.2);
 
-            s = (short)i;
-            us = (ushort)i;
-
-            long l;
-            checked
-            {
-                l = long.MaxValue;
-                i = (int)l;
-            }
-
-            double d = 2342.234;
-            float f = 245.234f;
-
-            f = (float)d;
-
-            Console.WriteLine($"s = {s}; i = {i}; us = {us}; l = {l}; f = {f}; d = {d}");
-            Console.WriteLine($"s = {short.MaxValue}; i = {int.MaxValue}; us = {ushort.MaxValue}");
+            Console.WriteLine();
         }
 
         private static void RefereceArrayCopy()

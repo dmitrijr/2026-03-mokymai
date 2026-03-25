@@ -2,9 +2,14 @@ namespace HelloWorld
 {
     public class Calculator
     {
-        public int Add(int a, int b)
+        public double Add(double b, int a)
         {
             return a + b;
+        }
+
+        public int Add(int a, double b)
+        {
+            return a + (int)b;
         }
 
         public int Add(int a, int b, int c)
