@@ -8,13 +8,14 @@ namespace HelloWorld
         {
             var c = new Calculator();
 
-            short a = 10;
-            int b = 20;
-            double d = 30.2;
+            short s = 10;
+            ushort us = 20;
+            int i = 65535; // -32,768 to 32,767 // 0 to 65,535
 
-            var result = a + b + d;
+            s = (short)i;
+            us = (ushort)i;
 
-            Console.WriteLine(c.Add(a, b, d));
+            Console.WriteLine($"s = {s}; i = {i}; us = {us}");
         }
 
         private static void RefereceArrayCopy()
