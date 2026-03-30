@@ -1,4 +1,5 @@
-﻿using System.Security.Principal;
+﻿using System.Reflection.Metadata;
+using System.Security.Principal;
 
 namespace HelloWorld
 {
@@ -6,14 +7,12 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            var bankAccount = new BankAccount("USD");
+            var rectangle = new Rectangle(10, 15);
+            rectangle.Point.X = 12;
+            rectangle.Point.Y = 9;
+            // rectangle.Point = new Point(1, 1);
 
-            bankAccount.Withdraw(12000);
-            bankAccount.Withdraw(20000);
-
-            Console.WriteLine(BankAccount.CurrencyConst);
-            Console.WriteLine(BankAccount.CurrencyStatic);
-            Console.WriteLine(bankAccount.Currency);
+            Console.WriteLine($"w: {rectangle.Width} h: {rectangle.Height} x: {rectangle.Point.X} y: {rectangle.Point.Y}");
         }
 
         private static void RefereceArrayCopy()

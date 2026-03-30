@@ -4,6 +4,7 @@ namespace HelloWorld
     {
         public static int Count { get; private set; }
 
+        public readonly Point Point = new Point(2, 3);
         public double Height { get; set; }
         public double Width { get; set; }
 
