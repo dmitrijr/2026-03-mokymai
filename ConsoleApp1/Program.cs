@@ -6,14 +6,12 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            var dataSaver1 = DataSaver.GetInstance();
-            var dataSaver2 = DataSaver.GetInstance();
+            var bankAccount = new BankAccount();
 
-            dataSaver1.FileName = "C:\\";
-            dataSaver2.FileName = "D:\\";
+            bankAccount.Withdraw(12000);
+            bankAccount.Withdraw(20000);
 
-            dataSaver1.Save();
-            dataSaver2.Save();
+            Console.WriteLine(BankAccount.Currency);
         }
 
         private static void RefereceArrayCopy()
