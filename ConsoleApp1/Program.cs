@@ -6,13 +6,14 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            var rect = new Rectangle();
+            var dataSaver1 = DataSaver.GetInstance();
+            var dataSaver2 = DataSaver.GetInstance();
 
-            var c = new Calculator();
+            dataSaver1.FileName = "C:\\";
+            dataSaver2.FileName = "D:\\";
 
-            c.Add(20, 32.2);
-
-            Console.WriteLine();
+            dataSaver1.Save();
+            dataSaver2.Save();
         }
 
         private static void RefereceArrayCopy()
