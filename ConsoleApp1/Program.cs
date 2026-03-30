@@ -6,12 +6,14 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            var bankAccount = new BankAccount();
+            var bankAccount = new BankAccount("USD");
 
             bankAccount.Withdraw(12000);
             bankAccount.Withdraw(20000);
 
-            Console.WriteLine(BankAccount.Currency);
+            Console.WriteLine(BankAccount.CurrencyConst);
+            Console.WriteLine(BankAccount.CurrencyStatic);
+            Console.WriteLine(bankAccount.Currency);
         }
 
         private static void RefereceArrayCopy()
