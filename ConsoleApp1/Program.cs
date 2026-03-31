@@ -7,20 +7,18 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            var student = new Student();
+            var student = new Student("Petras", "Petraitis", DateTime.Now);
+            var teacher = new Teacher("Jonaitis", DateTime.Now);
 
-            student.FirstName = "Petras";
-            student.LastName = "Petraitis";
+            var people = new List<Person>();
 
-            var person = new Person();
+            people.Add(student);
+            people.Add(teacher);
 
-            person.FirstName = "Jonas";
-            person.LastName = "Jonaitis";
-
-            person.Greet();
-            student.Greet();
-            Console.WriteLine($"First name: {person.FirstName}, last name: {person.LastName}");
-            Console.WriteLine($"First name: {student.FirstName}, last name: {student.LastName}");
+            for (int i = 0; i < people.Count; i++)
+            {
+                people[i].Greet();
+            }
         }
 
         private static void RefereceArrayCopy()
