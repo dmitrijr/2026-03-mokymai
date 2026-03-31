@@ -7,8 +7,14 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            var student = new Student("Petras", "Petraitis", DateTime.Now);
-            var teacher = new Teacher("Jonaitis", DateTime.Now);
+            var student = new Student("Petras", "Petraitis", DateTime.Now)
+            {
+                University = "VU"
+            };
+            var teacher = new Teacher("Jonaitis", DateTime.Now)
+            {
+                Subject = "Math"
+            };
 
             var people = new List<Person>();
 
@@ -18,7 +24,10 @@ namespace HelloWorld
             for (int i = 0; i < people.Count; i++)
             {
                 people[i].Greet();
+                people[i].Introduce();
             }
+
+            teacher.Greet();
         }
 
         private static void RefereceArrayCopy()

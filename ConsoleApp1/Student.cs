@@ -2,12 +2,16 @@ namespace HelloWorld
 {
     public class Student : Person
     {
-        public string School { get; set; }
+        public string University { get; set; }
 
         public Student(string firstName, string lastName, DateTime birthday)
             : base(firstName, lastName, birthday)
         {
-            Console.WriteLine("Creating Student");
+        }
+
+        public override void Introduce()
+        {
+            Console.WriteLine($"I'm student. I'm studying at {University}");
         }
     }
 }

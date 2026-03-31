@@ -11,16 +11,12 @@ namespace HelloWorld
         {
             LastName = lastName;
             Birthday = birthday;
-
-            Console.WriteLine("Person 1");
         }
 
         public Person(string firstName, string lastName, DateTime birthday)
             : this(lastName, birthday)
         {
             FirstName = firstName;
-
-            Console.WriteLine("Person 2");
         }
 
         public Person(string firstName, string lastName, string country, DateTime birthday)
@@ -32,6 +28,11 @@ namespace HelloWorld
         public void Greet()
         {
             Console.WriteLine($"Hello, my name is {FirstName} {LastName}");
+        }
+
+        public virtual void Introduce()
+        {
+            Console.WriteLine("I'm person");
         }
     }
 }
