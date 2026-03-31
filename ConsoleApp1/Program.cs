@@ -7,12 +7,20 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            var rectangle = new Rectangle(10, 15);
-            rectangle.Point.X = 12;
-            rectangle.Point.Y = 9;
-            // rectangle.Point = new Point(1, 1);
+            var student = new Student();
 
-            Console.WriteLine($"w: {rectangle.Width} h: {rectangle.Height} x: {rectangle.Point.X} y: {rectangle.Point.Y}");
+            student.FirstName = "Petras";
+            student.LastName = "Petraitis";
+
+            var person = new Person();
+
+            person.FirstName = "Jonas";
+            person.LastName = "Jonaitis";
+
+            person.Greet();
+            student.Greet();
+            Console.WriteLine($"First name: {person.FirstName}, last name: {person.LastName}");
+            Console.WriteLine($"First name: {student.FirstName}, last name: {student.LastName}");
         }
 
         private static void RefereceArrayCopy()
