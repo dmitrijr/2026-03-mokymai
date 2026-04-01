@@ -1,19 +1,27 @@
-﻿namespace ConsoleApp1
+﻿using ConsoleApp1.Exceptions;
+
+namespace ConsoleApp1
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            var shapes = new List<Shape>()
+            var rectangle = new Rectangle(10, 4);
+
+
+            try
             {
-                new Rectangle(10, 12),
-                new Circle(3),
-                new Rectangle(7, 5),
-            };
-            for (int i = 0; i < shapes.Count; i++)
-            {
-                Console.WriteLine(shapes[i]);
+                Console.WriteLine("working 1...");
+
+                rectangle.Width = -3;
+
+                Console.WriteLine("working 2...");
             }
+            catch (NonPositiveValueException ex)
+            {
+                Console.WriteLine($"Ne teigiama reikšmė: {ex.Message}");
+            }
+
 
             Console.WriteLine("Hello world!");
         }
