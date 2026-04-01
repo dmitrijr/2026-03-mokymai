@@ -1,4 +1,4 @@
-namespace HelloWorld
+namespace ConsoleApp1
 {
     public class Circle : Shape
     {

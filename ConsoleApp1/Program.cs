@@ -1,8 +1,4 @@
-﻿using System.Reflection.Metadata;
-using System.Security.Principal;
-using ConsoleApp1;
-
-namespace HelloWorld
+﻿namespace ConsoleApp1
 {
     internal class Program
     {
