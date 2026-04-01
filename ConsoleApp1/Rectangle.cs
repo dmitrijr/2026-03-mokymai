@@ -1,37 +1,29 @@
 namespace HelloWorld
 {
-    public class Rectangle
+    public class Rectangle : Shape
     {
-        public static int Count { get; private set; }
-
-        public readonly Point Point = new Point(2, 3);
-        public double Height { get; set; }
         public double Width { get; set; }
+        public double Height { get; set; }
 
-        public Rectangle()
+        public Rectangle(double widht, double height)
         {
-            Count++;
-        }
-
-        public Rectangle(double width, double height)
-        {
-            Width = width;
+            Width = widht;
             Height = height;
-
-            Count++;
         }
 
-        public Rectangle(Rectangle sourceRect)
-        {
-            Width = sourceRect.Width;
-            Height = sourceRect.Height;
-
-            Count++;
-        }
-
-        public double GetArea()
+        public override double GetArea()
         {
             return Width * Height;
+        }
+
+        public override double GetPerimeter()
+        {
+            return 2 * (Width + Height);
+        }
+
+        public override string ToString()
+        {
+            return $"w: {Width}; h: {Height}; {base.ToString()}";
         }
     }
 }
