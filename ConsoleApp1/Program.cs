@@ -8,22 +8,31 @@ namespace ConsoleApp1
         {
             var rectangle = new Rectangle(10, 4);
 
-
+            StreamReader streamReader = null;
             try
             {
                 Console.WriteLine("working 1...");
 
-                rectangle.Width = -3;
+                using (streamReader = new StreamReader("data.txt"))
+                {
+                    rectangle.Width = -3;
 
-                Console.WriteLine("working 2...");
+                    Console.WriteLine("working 2...");
+                }
             }
             catch (NonPositiveValueException ex)
             {
                 Console.WriteLine($"Ne teigiama reikšmė: {ex.Message}");
             }
+            finally
+            {
+                if (streamReader != null)
+                    streamReader.Close();
 
+                Console.WriteLine("Free resources...");
+            }
 
-            Console.WriteLine("Hello world!");
+            Console.WriteLine("End.");
         }
     }
 }
