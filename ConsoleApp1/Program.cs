@@ -5,7 +5,7 @@ namespace ConsoleApp1
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static int Main(string[] args)
         {
             try
             {
@@ -15,6 +15,11 @@ namespace ConsoleApp1
 
                 Console.WriteLine("working 2...");
             }
+            catch (BaseException ex)
+            {
+                Console.WriteLine("Validation/bad data error");
+                return 1;
+            }
             catch (Exception ex)
             {
                 Console.WriteLine($"Unhandled exception... Error message: {ex.Message}");
@@ -22,6 +27,8 @@ namespace ConsoleApp1
             }
 
             Console.WriteLine("End.");
+
+            return 0;
         }
     }
 }
