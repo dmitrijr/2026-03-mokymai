@@ -1,4 +1,5 @@
 ﻿using ConsoleApp1.Exceptions;
+using ConsoleApp1.Readers;
 
 namespace ConsoleApp1
 {
@@ -6,30 +7,18 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            var rectangle = new Rectangle(10, 4);
-
-            StreamReader streamReader = null;
             try
             {
                 Console.WriteLine("working 1...");
 
-                using (streamReader = new StreamReader("data.txt"))
-                {
-                    rectangle.Width = -3;
+                var ractangle = ShapesReader.ReadRectangle();
 
-                    Console.WriteLine("working 2...");
-                }
+                Console.WriteLine("working 2...");
             }
-            catch (NonPositiveValueException ex)
+            catch (Exception ex)
             {
-                Console.WriteLine($"Ne teigiama reikšmė: {ex.Message}");
-            }
-            finally
-            {
-                if (streamReader != null)
-                    streamReader.Close();
-
-                Console.WriteLine("Free resources...");
+                Console.WriteLine($"Unhandled exception... Error message: {ex.Message}");
+                Console.WriteLine(ex.StackTrace);
             }
 
             Console.WriteLine("End.");
